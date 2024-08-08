@@ -41,15 +41,6 @@ In this project, I utilized JavaScript along with the D3.js library to manipulat
 - D3.js
 - Plotly.js
 
-## Installation
-
-Open `index.html` in a web browser to view the dashboard.
-
-## Deployment
-
-The application has been deployed on GitHub Pages. You can access it at:  
-[GitHub Pages Link](https://yourusername.github.io/belly-button-biodiversity/) <!-- Replace with your actual GitHub Pages link -->
-
 ## Usage
 
 1. Select an individual from the dropdown menu.

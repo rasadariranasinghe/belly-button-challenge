@@ -16,7 +16,7 @@ function buildMetadata(sample) {
 
     // Inside a loop, you will need to use d3 to append new
     // tags for each key-value in the filtered metadata.
-    Object.entries(result).forEach(([key, value]) => {
+    Object.entries(metadata).forEach(([key, value]) => {
       panel.append("h6").text(`${key.toUpperCase()}: ${value}`);
     });
   });
@@ -41,6 +41,7 @@ function buildCharts(sample) {
     let bubbleData = [{
       x: otu_ids,
       y: sample_values,
+      mode: 'markers',
       marker: {
         size: sample_values,
         color: otu_ids,
@@ -87,17 +88,17 @@ function init() {
     let names = data.names;
 
     // Use d3 to select the dropdown with id of `#selDataset`
-    d3.select("#selDataset")
+    let dropdown = d3.select("#selDataset")
 
     // Use the list of sample names to populate the select options
     // Hint: Inside a loop, you will need to use d3 to append a new
     // option for each sample name.
-    sampleNames.forEach((sample) => {
+    names.forEach((sample) => {
       dropdown.append("option").text(sample).property("value", sample);
     });
 
     // Get the first sample from the list
-    let firstSample = sampleNames[0];
+    let firstSample = names[0];
 
 
     // Build charts and metadata panel with the first sample
